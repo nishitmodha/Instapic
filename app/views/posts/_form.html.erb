@@ -11,18 +11,18 @@
     </div>
   <% end %>
   
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class:"form-control-file" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group width">
     <%= form.label :caption %>
-    <%= form.text_field :caption %>
+    <%= form.text_field :caption, class:"form-control" %>
   </div>
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-dark" %>
   </div>
 <% end %>
