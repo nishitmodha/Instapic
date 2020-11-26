@@ -1,13 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-
 <h1>Posts</h1>
 
-
 <% @posts.each do |post| %>
-<div>
-  <%= link_to (image_tag (post.image)) ,post%>
-  <%= post.caption %> 
-  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
+    <%= render 'posts/posts' , post: post%>
 <% end %>
+
+
+
