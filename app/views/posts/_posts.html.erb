@@ -1,28 +1,24 @@
 <div>
    <%= post.user.user_name %>
+
+<div class="time-ago">
+  <%= time_ago_in_words post.created_at %>
+</div>
+
   <%= link_to (image_tag (post.image)) ,post%>
   <%= post.user.user_name %>
   <%= post.caption %> 
 </div>
+
 <div>
-
+<div class="comments" id="comments_<% post.id %>">
   <% if post.comments %>
-    Comments: 
-    <% post.comments.each do |comment| %>
-      <%= comment.user.user_name %>
-      <%= comment.content %><br>
-
-      <% if comment.user == current_user %>
-        <%= link_to 'Delete Comment', post_comment_path(post,comment), method: :delete, data: { confirm: 'Are you sure?' } %> <br>
-        <% end %>
-    <% end %>
+    <%= render post.comments, post: post %>
   <% end %>
-
+  </div>
     <div>
-          <%= form_for [post, post.comments.new] do |f| %>
-            <%= f.text_field :content, placeholder: 'Add a comment...' %>
+          <%= form_for([post, post.comments.build]) do |f| %>
+            <%= f.text_field :content, placeholder: 'Add a comment...',id: "comment_content_#{post.id}" %>
           <% end %>
-    </div>
-
-</div>
 <hr>
+</div>
