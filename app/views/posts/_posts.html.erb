@@ -1,24 +1,32 @@
-<div>
-   <%= post.user.user_name %>
-
-<div class="time-ago">
-  <%= time_ago_in_words post.created_at %>
-</div>
-
-  <%= link_to (image_tag(post.image)),post if post.image.attached? %>
-  <%= post.user.user_name %>
-  <%= post.caption %> 
-</div>
-
-<div>
-<div class="comments" id="comments_<% post.id %>">
-  <% if post.comments %>
-    <%= render post.comments, post: post %>
-  <% end %>
-  </div>
-    <div>
-          <%= form_for([post, post.comments.build]) do |f| %>
-            <%= f.text_field :content, placeholder: 'Add a comment...',id: "comment_content_#{post.id}" %>
+<div class="posts-wrapper">
+  <div class="post">
+    <div class="post-head">
+      <div class="thumb-img"></div>
+      <div class="user-name">
+        <%= post.user.user_name %>
+      </div>
+      <div class="time-ago">
+        <%= time_ago_in_words post.created_at %>
+      </div>
+    </div>
+    <div class="image center-block">
+      <%= link_to (image_tag(post.image)),post,class:'img-responsive' if post.image.attached? %>
+    </div>
+    <div class="post-bottom">
+      <div class="caption">
+        <div class="user-name">
+          <%= post.user.user_name %>
+        </div>
+        <%= post.caption %>
+      </div>
+            <% if post.comments %>
+              <%= render post.comments, post: post %>
           <% end %>
-<hr>
+      <div class="comment-form col-sm-11">
+        <%= form_for [post, post.comments.new] do |f| %>
+          <%= f.text_field :content, placeholder: 'Add a comment...' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
