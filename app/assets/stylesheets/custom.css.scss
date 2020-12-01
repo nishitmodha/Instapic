@@ -2,8 +2,10 @@
 
 img {
     display: block;
-    max-width: 20%;
+    max-width: 30%;
      height: auto;
+     margin: auto;
+
     // margin-left: auto;
     // margin-right: auto;
     // width: 50%;
@@ -224,4 +226,12 @@ body {
 .back
 {
   border: #4B4F54;
+}
+
+#user_avatar {
+  margin: 20px auto;
+}
+
+.profile-image {
+ border-radius: 50%;
 }
