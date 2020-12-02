@@ -33,7 +33,8 @@ class CommentsController < ApplicationController
           @comment.delete
           respond_to do |format|
             format.html { redirect_to root_path }
-            format.js
+            format.json { head :no_content }
+            format.js { render :layout => false }
           end
         end
       end

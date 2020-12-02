@@ -10,8 +10,11 @@
       </div>
     </div>
     <div class="image center-block">
-      <%= link_to (image_tag(post.image)),post,class:'img-responsive' if post.image.attached? %>
+      <%= link_to (image_tag(post.image)),post,class:'img-responsive' if post.image.attached? %> 
     </div>
+
+  <%= render 'posts/likes', post: post %>
+
     <div class="post-bottom">
       <div class="caption">
         <div class="user-name">
@@ -19,6 +22,12 @@
         </div>
         <%= post.caption %>
       </div>
+
+      <div class="comment-like-form row">
+  <div class="col-sm-1">
+    <%= link_to 'Like', like_post_path(post.id), id: "like_#{post.id}" %>
+  </div>
+</div>
 
           <% if post.comments %>
             <% unless post.comments.count <= 4 %>

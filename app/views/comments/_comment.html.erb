@@ -1,18 +1,13 @@
-<% if post.comments %>
+<div id="all comments">
+<div id="comment_<%= comment.id %>" class="row single-comment vertical-align">
   <div class="user-name">
-    <%= link_to comment.user.user_name, profile_path(comment.user.user_name) %>
+    <%= comment.user.user_name %>
   </div>
   <div class="comment-content">
     <%= comment.content %>
   </div>
-
   <% if comment.user == current_user %>
-    <%= link_to 'Delete Comment', post_comment_path(post,comment), method: :delete, data: { confirm: 'Are you sure?' } %> <hr>
-    <% end %>
-
-<% end %>
-
-
-
-
- 
+    <%= link_to 'del', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+  <% end %>
+</div>
+</div>
