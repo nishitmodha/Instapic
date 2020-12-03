@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_voter
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }

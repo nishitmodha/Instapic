@@ -23,9 +23,9 @@
         <%= post.caption %>
       </div>
 
-      <div class="comment-like-form row">
+<div class="comment-like-form row">
   <div class="col-sm-1">
-    <%= link_to 'Like', like_post_path(post.id), id: "like_#{post.id}" %>
+    <%= liked_post post %>
   </div>
 </div>
 

@@ -38,9 +38,7 @@ html {
   margin-bottom: 0px;
 }
 
-.alert {
-  margin-bottom: 0px;
-}
+
 
 .log-in{
   margin-left: auto;
@@ -234,4 +232,14 @@ body {
 
 .profile-image {
  border-radius: 50%;
+ width: 60%;
+}
+.like {
+  text-decoration: none;
+  color: red;
+}
+.like a:hover, a:focus
+{
+  color:red;
+  text-decoration: none;
 }

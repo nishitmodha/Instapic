@@ -12,8 +12,6 @@ class CommentsController < ApplicationController
     def create
       @comment = @post.comments.build(comment_params)
       @comment.user_id = current_user.id
-        
-
 
       if @comment.save
         respond_to do |format|
@@ -24,7 +22,6 @@ class CommentsController < ApplicationController
         flash[:alert] = "Check the comment form, something went horribly wrong."
         render root_path
     end
-    
     end
 
     def destroy
@@ -48,4 +45,5 @@ class CommentsController < ApplicationController
     def set_post
       @post = Post.find(params[:post_id])
     end
+
 end
