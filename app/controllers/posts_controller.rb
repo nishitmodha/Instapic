@@ -66,6 +66,7 @@ class PostsController < ApplicationController
 
   def like
     if @post.liked_by current_user
+      create_notification @post
         respond_to do |format|
           format.html { redirect_back }
           format.js
@@ -83,6 +84,15 @@ class PostsController < ApplicationController
   end
 
   private
+  def create_notification(post)
+    return if post.user == current_user
+    Notification.create(user_id: post.user.id,
+                        notified_by_id: current_user.id,
+                        post_id: post.id,
+                        identifier: post.id,
+                        notice_type: 'like')
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
