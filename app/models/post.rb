@@ -11,4 +11,7 @@ class Post < ApplicationRecord
     
     has_one_attached :image 
     paginates_per 3
+
+    scope :of_followed_users, -> (following_users) { where user_id: following_users }
+
 end

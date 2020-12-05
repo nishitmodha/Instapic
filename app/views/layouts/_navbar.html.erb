@@ -16,6 +16,12 @@
         <%= link_to 'New Post', new_post_path, class:"nav-link" %>
       </li>
       <li class="nav-item active">
+        <%= link_to "Profile", profile_path(current_user.user_name), class:"nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Browse Posts", browse_posts_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item active">
         <%= link_to 'Edit', edit_user_registration_path, class:"nav-link" %>
       </li>
       <li class="nav-item active">

@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order('created_at DESC').page params[:page]
+    @posts = Post.of_followed_users(current_user.following).order('created_at DESC').page params[:page]
   end
 
   # GET /posts/1
@@ -82,6 +82,10 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def browse
+    @posts = Post.all.order('created_at DESC').page params[:page]
+  end  
 
   private
   def create_notification(post)
