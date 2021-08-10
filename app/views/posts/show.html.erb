@@ -1,10 +1,10 @@
-
-
 <%= render 'posts/posts', post: @post %>
+<div class="show-btn"> 
 <% if @post.user.id == current_user.id %>
-  <%= link_to 'Edit Post', edit_post_path(@post), class: "btn btn-dark" %>
-  <%= link_to 'Cancel', posts_path, class: "btn btn-dark" %>
-  <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-dark" %>
+  <%= link_to 'Edit Post', edit_post_path(@post), class: "show-btn btn btn-dark" %>
+  <%= link_to 'Cancel', posts_path, class: "show-btn btn btn-dark" %>
+  <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "show-btn btn btn-dark" %>
 <% else %>
   <%= link_to 'Cancel', posts_path, class: "btn btn-dark" %>
 <% end %>
+</div>

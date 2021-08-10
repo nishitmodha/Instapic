@@ -23,6 +23,7 @@ img {
 
 html {
   height: 100%;
+  font-size: 15px;
 }
 
 .registration-bg {
@@ -66,6 +67,12 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.form-check-label{
+  padding-left:1.4em;
+  display:inline-block;
+}
+
 
 #post_image {
   padding: 1em;
@@ -186,15 +193,17 @@ body {
 }
 
 .comment-like-form {
-  padding-top: 24px;
+  padding-top: 4px;
   margin-top: 13px;
   margin-left: 24px;
-  margin-right: 24px;
-  min-height: 68px;
-  align-items: center;
   border-top: 1px solid #EEEFEF;
   flex-direction: row;
+}
+
+.show-btn {
+  display: flex;
   justify-content: center;
+  margin-right: 5px;
 }
 
 /* ## Wrapper and styling for the new and edit views ## */
@@ -237,6 +246,7 @@ body {
 .like {
   text-decoration: none;
   color: red;
+  font-size: 20px;
 }
 .like a:hover, a:focus
 {

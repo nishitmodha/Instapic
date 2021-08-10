@@ -15,6 +15,11 @@
 
   <%= render 'posts/likes', post: post %>
 
+<div class="comment-like-form row">
+  <div class="col-sm-1">
+    <%= liked_post post %>
+  </div>
+</div>
     <div class="post-bottom">
       <div class="caption">
         <div class="user-name">
@@ -22,12 +27,6 @@
         </div>
         <%= post.caption %>
       </div>
-
-<div class="comment-like-form row">
-  <div class="col-sm-1">
-    <%= liked_post post %>
-  </div>
-</div>
 
           <% if post.comments %>
             <% unless post.comments.count <= 4 %>
@@ -37,9 +36,9 @@
               <%= render post.comments.last(4), post: post %>
           <% end %>
 
-      <div class="comment-form col-sm-11">
+      <div class="comment-form">
         <%= form_for [post, post.comments.new] do |f| %>
-          <%= f.text_field :content, placeholder: 'Add a comment...' %>
+          <%= f.text_field :content, placeholder: 'Add a comment...', class:"form-control" %>
         <% end %>
       </div>
     </div>
