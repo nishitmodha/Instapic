@@ -1,3 +1,3 @@
 # Instapic 
 
-Ongoing Project
+Instapic is created using Ruby on Rails and Bootstrap for the interactive UI. Instapic allows registered users to upload posts with pictures. Users can browse all the posts that are uploaded and can follow the users they want. Users will be able to view the posts, like and leave a comment on the posts of the users they follow from their timeline. Users are notified when someone likes or leaves a comment on their post.
