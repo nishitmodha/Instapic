@@ -1,1 +1,11 @@
-<%= render 'post_dashboard', posts: @posts %>
+<% if @posts.count == 0 %>
+  <div class="jumbotron">
+    <h2 class="display-4">Hello, <%= current_user.user_name %></h2>
+    <p class="lead">You should follow some people to view their interesting posts on your timeline!</p>
+    <p class="lead">
+      <%= link_to "Browse Posts", browse_posts_path, class: "btn btn-primary btn-lg" %>
+    </p>
+  </div>
+<% else %>
+  <%= render 'post_dashboard', posts: @posts %>
+<% end %>
