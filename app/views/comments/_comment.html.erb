@@ -1,14 +1,10 @@
-<div id="all comments">
-<div id="comment_<%= comment.id %>" class="row single-comment vertical-align">
-  <div class="user-name">
-    <%= comment.user.user_name %>
+<div id="comment_<%= comment.id %>">
+  <div>
+      <div>
+        <div> <span ><%= comment.user.user_name %></span> <small ><%= time_ago_in_words comment.created_at %></small> </div>
+      </div>
+      <p><%= comment.content %>
+      <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true %></p>
+      <hr />
   </div>
-  <div class="comment-content">
-    <%= comment.content %>
-    <%= time_ago_in_words comment.created_at %>
-  </div>
-  <% if comment.user == current_user %>
-    <%= link_to 'Delete', post_comment_path(post, comment), method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
-  <% end %>
-</div>
 </div>
