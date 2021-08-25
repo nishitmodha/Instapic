@@ -149,7 +149,7 @@ body {
 }
 
 .post-bottom {
-  .user-name, .comment-content {
+  .user-name {
     display: inline;
   }
   .caption {
@@ -164,17 +164,6 @@ body {
   .user-name, .caption-content {
     display: inline;
   }
-  #comment {
-    margin-top: 7px;
-    .user-name {
-      font-weight: 500;
-      margin-right: 0.3em;
-    }
-    .delete-comment {
-      float: right;
-      color: red;
-    }
-  }
   margin-bottom: 7px;
   padding-top: 24px;
   padding-left: 24px;
@@ -182,14 +171,6 @@ body {
   padding-bottom: 10px;
   font-size: 15px;
   line-height: 18px;
-}
-
-.comment_content {
-  font-size: 15px;
-  line-height: 18px;
-  border: medium none;
-  width: 100%;
-  color: #4B4F54;
 }
 
 .comment-like-form {
