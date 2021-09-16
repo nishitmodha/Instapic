@@ -35,11 +35,6 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-.navbar {
-  margin-bottom: 0px;
-}
-
-
 
 .log-in{
   margin-left: auto;
@@ -87,24 +82,6 @@ body {
 
 /* ## NAVBAR CUSTOMISATIONS ## */
 
-.navbar-brand {
-  a {
-    color: #125688;
-  }
-}
-
-.navbar-default {
-  background-color: #fff;
-  height: 54px;
-  .navbar-nav li a {
-    color: #125688;
-  }
-}
-
-.navbar-container {
-  width: 70%;
-  margin: 0 auto;
-}
 
 /* ## POST CUSTOMISATIONS ## */
 
@@ -282,3 +259,12 @@ a.like:hover{
   }
 }
 
+
+.navbar{
+  .navbar-brand a{
+      padding: 0;
+  }
+  .nav-item{
+      margin: 0 15px;
+  }
+}
