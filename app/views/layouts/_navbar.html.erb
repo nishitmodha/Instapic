@@ -10,7 +10,7 @@
           <ul class="navbar-nav text-center">
               <% if user_signed_in? %>
                 <li class="nav-item">
-                  <%= render 'notifications/notification_dropdown'%>
+                  <%= render 'notifications/notification_dropdown' %>
                 </li>
                   <li class="nav-item">
                     <%= link_to 'New Post', new_post_path, class:"nav-link" %>
