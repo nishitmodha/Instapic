@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :messages, only: [:new, :create]
+  resources :conversations, only: [:index, :show]
   get 'relationships/follow_user'
   get 'relationships/unfollow_user'
   get 'notifications/:id/link_through', to: 'notifications#link_through', as: :link_through

@@ -16,6 +16,9 @@
                     <%= link_to 'New Post', new_post_path, class:"nav-link" %>
                   </li>
                   <li class="nav-item">
+                    <%= link_to 'DMs', conversations_path, class:"nav-link" %>
+                  </li>
+                  <li class="nav-item">
                     <%= link_to "Profile", profile_path(current_user.user_name), class:"nav-link" %>
                   </li>
                   <li class="nav-item">
