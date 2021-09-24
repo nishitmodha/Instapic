@@ -1,0 +1,10 @@
+<h1>Your conversations</h1>
+
+  <% @users.each do |users| %>
+    <p><%= users.user_name %>
+    <%= link_to 'send a message', new_message_path(receiver_id: users) %></p>
+  <% end %>
+
+<div id="conversations">
+  <%= render @conversations %>
+</div>
