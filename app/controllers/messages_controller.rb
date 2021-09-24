@@ -7,9 +7,12 @@ class MessagesController < ApplicationController
                                           receiver_id: @receiver.id)
     @message = current_user.messages.build(message_params)
     @message.conversation_id = @conversation.id
-    @message.save!
-
-    flash[:success] = "Your message was sent!"
+    if @message.save
+      ActionCable.server.broadcast "conversations_channel",
+      content: @message.body,
+      user_name: @message.user.user_name
+    else
+    end
     redirect_to conversation_path(@conversation)
   end
 
