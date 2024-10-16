@@ -16,7 +16,3 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import "bootstrap"
-
-window.notification_ui = function() {
-  $('.dropdown ul li').addClass('dropdown-header')
-}

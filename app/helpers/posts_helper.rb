@@ -9,10 +9,10 @@ module PostsHelper
   def liked_post(post)
     if current_user.voted_for? post
       return link_to '', unlike_post_path(post), remote: true, id: "like_#{post.id}", 
-      class: "like bi bi-heart-fill"
+      class: "like glyphicon glyphicon-heart"
     else
         link_to '', like_post_path(post), remote: true, id: "like_#{post.id}", 
-        class: "like bi bi-heart" 
+        class: "like glyphicon glyphicon-heart-empty" 
     end
   end
 

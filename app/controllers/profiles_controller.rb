@@ -4,13 +4,16 @@ class ProfilesController < ApplicationController
   before_action :owned_profile, only: [:edit, :update]
   
   def show
+    
     @posts = User.find_by(user_name: params[:user_name]).posts.order('created_at DESC')
   end
 
   def edit
+    
   end
   
   def update
+    
     if @user.update(profile_params)
       flash[:success] = 'Your profile has been updated.'
       redirect_to profile_path(@user.user_name)
@@ -28,6 +31,7 @@ def profile_params
 end
 
 def owned_profile
+  
   unless current_user == @user
     flash[:alert] = "That profile doesn't belong to you!"
     redirect_to root_path
